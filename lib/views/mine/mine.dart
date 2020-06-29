@@ -1,15 +1,16 @@
 /*
  * @Author: web516
  * @Date: 2020-06-15 10:11:09
- * @LastEditTime: 2020-06-24 15:43:08
- * @FilePath: \AndroidStudioProjects\douban\lib\views\mine\mine.dart
+ * @LastEditTime: 2020-06-29 16:35:44
+ * @FilePath: \douban\lib\views\mine\mine.dart
  * @web516版权所有，若引用请联系作者QQ:516919611
  */ 
 import 'package:flutter/material.dart';
-// import '../../components/toast.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'web_view.dart';
 
 class MinePage extends StatelessWidget{
   @override
@@ -57,18 +58,13 @@ class Mybody extends StatelessWidget {
                   "assets/images/github.png",
                   width: 24,
                 ),
-                title: "我的博客",
+                title: "项目地址",
                 clickFn: (){
-                  _launchURL();
-                  // Fluttertoast.showToast(
-                  //   msg: "暂无项目地址",
-                  //   toastLength: Toast.LENGTH_SHORT,
-                  //   gravity: ToastGravity.CENTER,
-                  //   timeInSecForIosWeb: 1,
-                  //   backgroundColor: Color.fromARGB(160, 0, 0, 0),
-                  //   textColor: Colors.white,
-                  //   fontSize: 16.0
-                  // );
+                  Navigator.of(context).push(
+                    CupertinoPageRoute(builder: (BuildContext context){
+                      return WebViewPage();
+                    })
+                  );
                 },
               ),
               ListTileWidget(
@@ -109,6 +105,11 @@ class Mybody extends StatelessWidget {
                   );
                 },
               ),
+              ListTileWidget(
+                icon: Image.asset("assets/images/blog.png",width: 24,),
+                title: "我的博客",
+                clickFn: _launchURL,
+              )
             ],
           ),
         )
