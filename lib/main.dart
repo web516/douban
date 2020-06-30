@@ -1,7 +1,7 @@
 /*
  * @Author: web516
  * @Date: 2020-06-15 10:06:52
- * @LastEditTime: 2020-06-23 15:48:22
+ * @LastEditTime: 2020-06-30 10:22:27
  * @FilePath: \AndroidStudioProjects\douban\lib\main.dart
  * @web516版权所有，若引用请联系作者QQ:516919611
  */ 
@@ -84,8 +84,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _animation,
-      child: Image.network(
-        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589878855414&di=d5779b0d5b3d292efa28cf2413c58a73&imgtype=0&src=http%3A%2F%2Fd.paper.i4.cn%2Fmax%2F2016%2F05%2F20%2F11%2F1463715731728_778225.jpg',
+      child: Image.asset(
+        'assets/images/kp.jpg',
         scale: 2.0,
         fit: BoxFit.cover,
       ),
