@@ -1,7 +1,7 @@
 /*
  * @Author: web516
  * @Date: 2020-06-18 11:23:54
- * @LastEditTime: 2020-06-23 12:05:20
+ * @LastEditTime: 2020-07-02 14:55:10
  * @FilePath: \AndroidStudioProjects\douban\lib\views\home\movie_detail.dart
  * @web516版权所有，若引用请联系作者QQ:516919611
  */ 
@@ -214,21 +214,14 @@ class MovieDetailPageState extends State <MovieDetailPage>{
             itemCount: movieItemDetail.tags.length,
             itemBuilder: (context,index){
               return Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(right:8),
-                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 6),
-                //width:60,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child:Text(
-                  movieItemDetail.tags[index],
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
+                margin: EdgeInsets.fromLTRB(0, 0, 6, 0),
+                child: Chip(//标签组件
+                  label: Text(movieItemDetail.tags[index]),
+                  labelStyle: TextStyle(
+                    color: Colors.white
                   ),
-                )
+                  backgroundColor: Theme.of(context).accentColor,
+                ),
               );
             }
           ),
